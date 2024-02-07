@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1 class="header_text">be my valentines pls?</h1>
+        </div>
+        <div class="gif_container">
+            <img id="gifImage" src="https://media.tenor.com/dnqHVp5NG0sAAAAM/gualichetas-gualicheta.gif" alt="Cute animated illustration" class="gif-img">
+        </div>
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()" onmouseout="restoreImage()">No</button>
+            <script>
+                function nextPage() {
+                    window.location.href = "yes.html";
+                }
+
+                function moveButton() {
+                    var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
+                    var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
+                    document.getElementById('noButton').style.left = `${x}px`;
+                    document.getElementById('noButton').style.top = `${y}px`;
+                    document.getElementById('gifImage').src = "https://pbs.twimg.com/media/FcbSPN4XoAEJbPp?format=jpg&name=small";
+                }
+
+                function restoreImage() {
+                    document.getElementById('gifImage').src = "https://media.tenor.com/dnqHVp5NG0sAAAAM/gualichetas-gualicheta.gif";
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
